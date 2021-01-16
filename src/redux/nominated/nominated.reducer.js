@@ -3,12 +3,15 @@ const INITIAL_STATE = {
 };
 
 const nomineeReducer = (state = INITIAL_STATE, action) => {
-  switch (key) {
-    case value:
-      break;
+  switch (action.type) {
+    case "SET_NOMINEE_LIST":
+      return {
+        ...state,
+        list: action.payload,
+      };
 
     default:
-      break;
+      return state;
   }
 };
 
