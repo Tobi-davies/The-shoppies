@@ -12,3 +12,6 @@ button {
 .App {
   background-color: hsl(0, 0%, 98%);
 }
+a {
+  text-decoration: none;
+}
