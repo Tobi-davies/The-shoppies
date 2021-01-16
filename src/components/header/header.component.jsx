@@ -9,7 +9,11 @@ const Header = () => {
         <h1>The Shoppies</h1>
 
         <div className="nomination">
-          <Link to="/nominees">View Nominees</Link>
+          <Link to="/nominees">
+            <p>
+              View Nominees: <span>0</span>
+            </p>
+          </Link>
         </div>
       </div>
     </div>

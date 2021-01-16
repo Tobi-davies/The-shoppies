@@ -1,4 +1,6 @@
-export const setNomineeList = (nominated) => ({
-  type: "SET_NOMINEE_LIST",
-  payload: nominated,
+import SetNomineeTypes from "./nominated.types";
+
+export const addNominee = (nominee) => ({
+  type: SetNomineeTypes.SET_NOMINEE_LIST,
+  payload: nominee,
 });

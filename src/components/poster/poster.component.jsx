@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./poster.styles.css";
+import { connect } from "react-redux";
+import { addNominee } from "../../redux/nominated/nominated.actions";
 
-const Poster = ({ title, year, poster, imdb }) => {
+const Poster = ({ title, year, poster, res, addNominee }) => {
+  const [activeBtn, setActiveBtn] = useState(false);
   // const { Title, Year, Poster, imdbID } = result;
-  // console.log(result);
+  console.log(res);
+
+  const handleDisable = () => {
+    setActiveBtn(true);
+    console.log("yaaay");
+  };
 
   return (
     <div className="poster">
@@ -22,9 +30,19 @@ const Poster = ({ title, year, poster, imdb }) => {
         </p>
         {/* <p className="imdb">IMDB: {imdb}</p> */}
       </div>
-      <button className="nominate">Nominate</button>
+      <button
+        className="nominate"
+        disabled={activeBtn}
+        onClick={(handleDisable, () => addNominee(res))}
+      >
+        Nominate
+      </button>
     </div>
   );
 };
 
-export default Poster;
+const mapDispatchToProps = (dispatch) => ({
+  addNominee: (nominee) => dispatch(addNominee(nominee)),
+});
+
+export default connect(null, mapDispatchToProps)(Poster);

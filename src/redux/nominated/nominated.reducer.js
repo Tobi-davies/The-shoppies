@@ -1,4 +1,5 @@
-// import setNomineeList from './nominated.actions'
+import SetNomineeTypes from "./nominated.types";
+import { addNomineeToList } from "./nominated.utils";
 
 const INITIAL_STATE = {
   list: [],
@@ -6,10 +7,10 @@ const INITIAL_STATE = {
 
 const nomineeReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case "SET_NOMINEE_LIST":
+    case SetNomineeTypes.SET_NOMINEE_LIST:
       return {
         ...state,
-        list: action.payload,
+        list: addNomineeToList(state.list, action.payload),
       };
 
     default:

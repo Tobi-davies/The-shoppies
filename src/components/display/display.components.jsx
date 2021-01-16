@@ -15,6 +15,7 @@ const DisplayResult = ({ results }) => {
           year={res.Year}
           poster={res.Poster}
           imdb={res.imdbID}
+          res={res}
           key={index}
         />
         // <div>{res.Title}</div>
