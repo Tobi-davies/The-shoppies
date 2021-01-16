@@ -1,3 +1,5 @@
+// import setNomineeList from './nominated.actions'
+
 const INITIAL_STATE = {
   list: [],
 };
