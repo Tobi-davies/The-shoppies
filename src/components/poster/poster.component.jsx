@@ -31,7 +31,12 @@ const Poster = ({ title, year, poster, res, addNominee }) => {
         </p>
         {/* <p className="imdb">IMDB: {imdb}</p> */}
       </div>
-      <button className="nominate" onClick={() => addNominee(res)}>
+      <button
+        className="nominate"
+        onClick={() => {
+          addNominee(res);
+        }}
+      >
         Nominate
       </button>
     </div>
