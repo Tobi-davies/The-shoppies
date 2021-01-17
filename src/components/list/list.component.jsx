@@ -1,7 +1,9 @@
 import React from "react";
 import "./list.styles.css";
+import { connect } from "react-redux";
+import { removeNominee } from "../../redux/nominated/nominated.actions";
 
-const List = ({ item }) => {
+const List = ({ item, removeNominee }) => {
   const { Title, Year, Poster } = item;
   return (
     <div className="list">
@@ -14,9 +16,15 @@ const List = ({ item }) => {
         </p>
         {/* <p className="imdb">IMDB: {imdb}</p> */}
       </div>
-      <button className="nominate">Remove Nominee</button>
+      <button className="nominate" onClick={() => removeNominee(item)}>
+        Remove Nominee
+      </button>
     </div>
   );
 };
 
-export default List;
+const mapDispatchToProps = (dispatch) => ({
+  removeNominee: (nominee) => dispatch(removeNominee(nominee)),
+});
+
+export default connect(null, mapDispatchToProps)(List);

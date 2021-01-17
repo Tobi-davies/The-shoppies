@@ -1,5 +1,6 @@
 import SetNomineeTypes from "./nominated.types";
 import { addNomineeToList } from "./nominated.utils";
+import { removeNomineeFromList } from "./nominated.utils";
 
 const INITIAL_STATE = {
   list: [],
@@ -11,6 +12,11 @@ const nomineeReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         list: addNomineeToList(state.list, action.payload),
+      };
+    case SetNomineeTypes.REMOVE_NOMINATED_ITEM:
+      return {
+        ...state,
+        list: removeNomineeFromList(state.list, action.payload),
       };
 
     default:

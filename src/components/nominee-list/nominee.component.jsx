@@ -6,7 +6,7 @@ import { selectNomineesList } from "../../redux/nominated/nominated.selctors";
 import { createStructuredSelector } from "reselect";
 
 const NomineeList = ({ list }) => {
-  console.log(list);
+  // console.log(list);
 
   return (
     <div className="nominees-list">
