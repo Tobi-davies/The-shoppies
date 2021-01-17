@@ -29,9 +29,10 @@ function App() {
   // }, []);
   return (
     <div className="App">
+      <Header />
+
       <Switch>
         <Route path="/" exact>
-          <Header />
           <SearchField updateResults={updateResults} />
           <DisplayResult results={results} />
         </Route>

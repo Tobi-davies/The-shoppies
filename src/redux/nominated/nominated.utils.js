@@ -6,10 +6,12 @@ export const addNomineeToList = (nomineesList, nomineeToAdd) => {
   );
 
   if (existingNominee) {
-    return nomineesList.filter(
-      (nominee) => nominee.imdbID !== nomineeToAdd.imdbID
+    return nomineesList.map((nominee) =>
+      nominee.imdbID === nomineeToAdd.imdbID
+        ? { ...nominee, quantity: nominee.quantity + 1 }
+        : nominee
     );
   }
 
-  return [...nomineesList, nomineeToAdd];
+  return [...nomineesList, { ...nomineeToAdd, quantity: 1 }];
 };

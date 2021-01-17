@@ -1,4 +1,4 @@
-.poster-img {
+.list-img {
   height: 250px;
   width: 100%;
   /* border: 3px solid green; */
@@ -10,21 +10,8 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
-/* .poster-img {
-  width: 100%;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.poster-img img {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
-.poster {
+
+.list {
   background: hsl(0, 0%, 100%);
 
   height: 406px;
@@ -39,7 +26,7 @@
 .poster-details {
   
 } */
-.poster-details {
+.list-details {
   padding: 10px;
 }
 .title {

@@ -8,10 +8,11 @@ const Poster = ({ title, year, poster, res, addNominee }) => {
   // const { Title, Year, Poster, imdbID } = result;
   console.log(res);
 
-  const handleDisable = () => {
-    setActiveBtn(true);
-    console.log("yaaay");
-  };
+  // const handleDisable = () => {
+  //   setActiveBtn(true);
+  //   console.log("yaaay");
+  //   console.log(activeBtn);
+  // };
 
   return (
     <div className="poster">
@@ -30,16 +31,22 @@ const Poster = ({ title, year, poster, res, addNominee }) => {
         </p>
         {/* <p className="imdb">IMDB: {imdb}</p> */}
       </div>
-      <button
-        className="nominate"
-        disabled={activeBtn}
-        onClick={(handleDisable, () => addNominee(res))}
-      >
+      <button className="nominate" onClick={() => addNominee(res)}>
         Nominate
       </button>
     </div>
   );
 };
+
+{
+  /* <button
+        className="nominate"
+        disabled={activeBtn}
+        onClick={(() => addNominee(res), handleDisable)}
+      >
+        Nominate
+      </button> */
+}
 
 const mapDispatchToProps = (dispatch) => ({
   addNominee: (nominee) => dispatch(addNominee(nominee)),
