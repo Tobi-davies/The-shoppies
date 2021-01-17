@@ -7,9 +7,7 @@ export const addNomineeToList = (nomineesList, nomineeToAdd) => {
 
   if (existingNominee) {
     return nomineesList.map((nominee) =>
-      nominee.imdbID === nomineeToAdd.imdbID
-        ? { ...nominee, quantity: nominee.quantity + 1 }
-        : nominee
+      nominee.imdbID === nomineeToAdd.imdbID ? nominee : nominee
     );
   }
 
