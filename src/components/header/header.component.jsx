@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "./header.styles.css";
+import { selectNomineesCount } from "../../redux/nominated/nominated.selctors";
 
 const Header = ({ nomineeCount }) => {
   return (
@@ -22,11 +23,8 @@ const Header = ({ nomineeCount }) => {
   );
 };
 
-const mapStateToProps = ({ nominee: { list } }) => ({
-  nomineeCount: list.reduce(
-    (accumulatedQuantity, listItem) => accumulatedQuantity + listItem.quantity,
-    0
-  ),
+const mapStateToProps = (state) => ({
+  nomineeCount: selectNomineesCount(state),
 });
 
 export default connect(mapStateToProps)(Header);
