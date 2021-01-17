@@ -35,12 +35,14 @@ const SearchField = ({ updateResults }) => {
     // console.log(e.target.value);
     // updateSearch(e.target.value);
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        // console.log(data.Search);
-        updateResults(data.Search);
-      });
+    if (value.length) {
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log(data.Search);
+          updateResults(data.Search);
+        });
+    }
   };
 
   return (

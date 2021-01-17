@@ -8,11 +8,7 @@ import NomineeList from "./components/nominee-list/nominee.component";
 import { Route, Switch } from "react-router-dom";
 
 function App() {
-  // const [search, updateSearch] = useState("");
-
   const [results, updateResults] = useState([]);
-
-  // console.log(results);
 
   // const apiKey = "1813ba2c";
 
@@ -34,6 +30,7 @@ function App() {
       <Switch>
         <Route path="/" exact>
           <SearchField updateResults={updateResults} />
+
           <DisplayResult results={results} />
         </Route>
         <Route path="/nominees" component={NomineeList} />

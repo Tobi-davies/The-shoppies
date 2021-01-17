@@ -1,5 +1,5 @@
 import SetNomineeTypes from "./nominated.types";
-import nomineeReducer from "./nominated.reducer";
+// import nomineeReducer from "./nominated.reducer";
 
 export const addNominee = (nominee) => ({
   type: SetNomineeTypes.SET_NOMINEE_LIST,
