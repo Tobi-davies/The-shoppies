@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "./header.styles.css";
 import { selectNomineesCount } from "../../redux/nominated/nominated.selctors";
+import { createStructuredSelector } from "reselect";
 
 const Header = ({ nomineeCount }) => {
   return (
@@ -23,8 +24,8 @@ const Header = ({ nomineeCount }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  nomineeCount: selectNomineesCount(state),
+const mapStateToProps = createStructuredSelector({
+  nomineeCount: selectNomineesCount,
 });
 
 export default connect(mapStateToProps)(Header);

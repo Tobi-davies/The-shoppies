@@ -9,17 +9,20 @@ const DisplayResult = ({ results }) => {
 
   return (
     <div className="display-result">
-      {results.map((res, index) => (
-        <Poster
-          title={res.Title}
-          year={res.Year}
-          poster={res.Poster}
-          imdb={res.imdbID}
-          res={res}
-          key={index}
-        />
-        // <div>{res.Title}</div>
-      ))}
+      {/* <h2>Results for '{}'</h2> */}
+      <div className="display-results-container">
+        {results.map((res, index) => (
+          <Poster
+            title={res.Title}
+            year={res.Year}
+            poster={res.Poster}
+            imdb={res.imdbID}
+            res={res}
+            key={index}
+          />
+          // <div>{res.Title}</div>
+        ))}
+      </div>
     </div>
   );
 };
